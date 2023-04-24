@@ -10,7 +10,7 @@ import com.mcode.shoppingapplication.models.ItemShop
 
 class ProductAdapter(var itemList: List<ItemShop>): RecyclerView.Adapter<ProductViewHolder>() {
     lateinit var context: Context
-    var itemSelected = MutableLiveData<ItemShop?>()
+    var itemSelected = MutableLiveData<Int?>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         context = parent.context
         val inflater = LayoutInflater.from(context)
@@ -21,7 +21,7 @@ class ProductAdapter(var itemList: List<ItemShop>): RecyclerView.Adapter<Product
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         holder.bindData(itemList[holder.adapterPosition])
         holder.itemView.setOnClickListener {
-            itemSelected.value = itemList[holder.adapterPosition]
+            itemSelected.value = holder.adapterPosition
         }
     }
 

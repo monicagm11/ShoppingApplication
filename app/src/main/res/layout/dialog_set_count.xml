@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="320dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textview_product_name"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edittext_count"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:hint="Cantidad"
+        android:maxLength="2"
+        app:layout_constraintTop_toBottomOf="@id/textview_product_price"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="Confirmar "
+        android:id="@+id/button_done"
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textColor = "@color/background_done_button"
+        android:gravity="end|center_vertical"
+        app:drawableEndCompat="@drawable/ic_done"
+        app:drawableTint="@color/background_done_button"
+        app:layout_constraintTop_toBottomOf="@id/edittext_count"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text=" Cancelar"
+        android:id="@+id/button_cancel"
+        android:gravity="start|center_vertical"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_close"
+        android:textColor = "@color/background_cancel_button"
+        app:drawableTint="@color/background_cancel_button"
+        app:layout_constraintTop_toTopOf="@id/button_done"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
